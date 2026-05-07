@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проект - Titan Stroy</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="works-page">
+    <header class="site-header">
+        <a class="site-header__logo" href="index.html">Titan Stroy</a>
+        <p class="header-description">Фотографии и детали выбранного проекта</p>
+        <nav class="site-header__nav" aria-label="Навигация">
+            <a class="button button--secondary" href="index.html">Главная</a>
+            <a class="button button--primary" href="works.html" aria-current="page">Наши работы</a>
+            <a class="button button--secondary" href="price.html">Прайс</a>
+            <a class="button button--secondary" href="contacts.html">Контакты</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="works-hero">
+            <div class="works-hero__inner">
+                <a class="back-link" href="works.html">Назад к работам</a>
+                <h1 id="project-title">Проект</h1>
+                <p>Нажмите на фотографию, чтобы открыть её в полном размере.</p>
+            </div>
+        </section>
+
+        <section class="project-block project-block--single">
+            <div class="gallery" id="project-gallery"></div>
+        </section>
+    </main>
+
+    <script src="js/parallax.js"></script>
+    <script>
+        const projects = {
+            "alexandrovsky": {
+                title: "Александровский",
+                images: [
+                    "img/Alexandrovsky/1.jpg",
+                    "img/Alexandrovsky/2.jpg",
+                    "img/Alexandrovsky/20180929_181938.jpg",
+                    "img/Alexandrovsky/20181001_090513.jpg",
+                    "img/Alexandrovsky/20181018_163106.jpg",
+                    "img/Alexandrovsky/20181019_142118.jpg",
+                    "img/Alexandrovsky/20181113_093143.jpg",
+                    "img/Alexandrovsky/3.jpg",
+                    "img/Alexandrovsky/logo.png"
+                ]
+            },
+            "big-moskou-der-29": {
+                title: "Большая Московская, 29",
+                images: [
+                    "img/Big Moskou Der 29/122.jpg",
+                    "img/Big Moskou Der 29/122312.jpg",
+                    "img/Big Moskou Der 29/gostinica-bolshaja-moskovskaja_top.jpg",
+                    "img/Big Moskou Der 29/IMG_2756.JPG",
+                    "img/Big Moskou Der 29/IMG_2757.JPG",
+                    "img/Big Moskou Der 29/IMG_2758 — копия.JPG",
+                    "img/Big Moskou Der 29/IMG_2758.JPG",
+                    "img/Big Moskou Der 29/IMG_2759.JPG"
+                ]
+            },
+            "chkalov-house": {
+                title: "Дом Чкалова",
+                images: [
+                    "img/Chkalov house/1.jpg",
+                    "img/Chkalov house/2.jpg",
+                    "img/Chkalov house/3.jpg",
+                    "img/Chkalov house/33077.jpg",
+                    "img/Chkalov house/33080.jpg",
+                    "img/Chkalov house/33083.jpg",
+                    "img/Chkalov house/33091.jpg",
+                    "img/Chkalov house/33997.jpg",
+                    "img/Chkalov house/logochkalov.png"
+                ]
+            },
+            "house-rusova": {
+                title: "Дом Русова",
+                images: [
+                    "img/House Rusova/IMG_1866.JPG",
+                    "img/House Rusova/IMG_1867.JPG",
+                    "img/House Rusova/IMG_1868.JPG",
+                    "img/House Rusova/IMG_1869.JPG",
+                    "img/House Rusova/IMG_1871.JPG",
+                    "img/House Rusova/IMG_1873.JPG",
+                    "img/House Rusova/IMG_1874.JPG",
+                    "img/House Rusova/IMG_1875.JPG",
+                    "img/House Rusova/IMG_1876.JPG",
+                    "img/House Rusova/IMG_1878.JPG",
+                    "img/House Rusova/IMG_1879.JPG",
+                    "img/House Rusova/IMG_1880.JPG",
+                    "img/House Rusova/IMG_1882.JPG",
+                    "img/House Rusova/IMG_4330.JPG",
+                    "img/House Rusova/IMG_4331.JPG",
+                    "img/House Rusova/IMG_4332.JPG",
+                    "img/House Rusova/IMG_4335.JPG",
+                    "img/House Rusova/IMG_4336.JPG",
+                    "img/House Rusova/IMG_4337.JPG",
+                    "img/House Rusova/IMG_4338.JPG",
+                    "img/House Rusova/IMG_4339.JPG",
+                    "img/House Rusova/IMG_4340.JPG",
+                    "img/House Rusova/IMG_4343.JPG",
+                    "img/House Rusova/IMG_4344.JPG",
+                    "img/House Rusova/Без имени-1.jpg"
+                ]
+            },
+            "residence": {
+                title: "Резиденция",
+                images: [
+                    "img/Residence/18728.jpg",
+                    "img/Residence/20160730_154802.jpg",
+                    "img/Residence/20170407_081021.jpg",
+                    "img/Residence/20170913_093023.jpg",
+                    "img/Residence/20171110_154101.jpg",
+                    "img/Residence/4.jpg",
+                    "img/Residence/5.jpg",
+                    "img/Residence/logo.png",
+                    "img/Residence/Rezidencia.jpg"
+                ]
+            },
+            "zab-23": {
+                title: "Заболотного, 23",
+                images: [
+                    "img/Zab 23/20201001_101359.jpg",
+                    "img/Zab 23/20201013_084927.jpg",
+                    "img/Zab 23/20201024_173047.jpg",
+                    "img/Zab 23/20201107_104136.jpg",
+                    "img/Zab 23/20210123_130916.jpg",
+                    "img/Zab 23/20220223_134042.jpg",
+                    "img/Zab 23/20220223_180108.jpg",
+                    "img/Zab 23/20220224_074319.jpg"
+                ]
+            }
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const currentProject = projects[params.get("project")] || projects.alexandrovsky;
+        const title = document.getElementById("project-title");
+        const gallery = document.getElementById("project-gallery");
+
+        document.title = `${currentProject.title} - Titan Stroy`;
+        title.textContent = currentProject.title;
+
+        currentProject.images.forEach((src, index) => {
+            const link = document.createElement("a");
+            const image = document.createElement("img");
+
+            link.href = src;
+            link.target = "_blank";
+            link.rel = "noopener";
+            image.src = src;
+            image.alt = `${currentProject.title} фото ${index + 1}`;
+
+            link.appendChild(image);
+            gallery.appendChild(link);
+        });
+    </script>
+</body>
+</html>
